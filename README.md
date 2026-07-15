@@ -1,4 +1,3 @@
-<img width="1512" height="982" alt="Screenshot 2026-07-15 at 13 03 17 (2)" src="https://github.com/user-attachments/assets/0d59b367-474a-4a51-90e1-c4269c2aba23" /><img width="1512" height="982" alt="Screenshot 2026-07-15 at 13 04 53 (2)" src="https://github.com/user-attachments/assets/8d96ea65-39a2-47af-9d85-e2863b72de89" /># Finance Manager
 
 A comprehensive, high-performance Android application designed to help users take full control of their personal finances. This app combines traditional expense tracking with modern AI-powered features like OCR receipt scanning and automated recurring income management.
 

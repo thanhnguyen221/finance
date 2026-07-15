@@ -8,50 +8,47 @@ A comprehensive, high-performance Android application designed to help users tak
 Get a high-level summary of your financial health at a glance. The dashboard aggregates data from all accounts to show total balance, recent transactions, and budget progress.
 *   **Tech:** Custom SQL aggregation queries, efficient data binding, and real-time UI updates.
 
-![Dashboard Overview](DIRECT_IMAGE_URL_HERE)
+<img width="1344" height="2992" alt="Screenshot_20260715_124618" src="https://github.com/user-attachments/assets/96b09da5-b895-459a-a747-2fdb10a5e625" />
 *Figure 1: Main Dashboard showing real-time financial summaries.*
 
 ### 2. AI-Powered OCR Receipt Scanning
 Stop manual entry for physical purchases. Simply snap a photo of your receipt, and the app will automatically extract the amount, date, vendor, and currency.
 *   **Tech:** Google ML Kit (Text Recognition), Android CameraX API for high-quality image capture, and custom parsing logic for receipt data.
 
-![OCR Receipt Scanning](DIRECT_IMAGE_URL_HERE)
+<img width="1344" height="2992" alt="Screenshot_20260715_124327" src="https://github.com/user-attachments/assets/7fc5883e-1b91-4933-95b3-b686f8677823" />
 *Figure 2: Automated data extraction from physical receipts using Machine Learning.*
 
 ### 3. Advanced Budgeting System
 Set strict or flexible financial goals across different timeframes—Daily, Weekly, Monthly, or Yearly. The app provides a "Global Budget" fallback to ensure you never overspend, even without specific plans.
 *   **Tech:** Complex SQLite logic with date-range overlaps and automated budget distribution algorithms.
 
-![Budget Management](DIRECT_IMAGE_URL_HERE)
+<img width="1344" height="2992" alt="Screenshot_20260715_124632" src="https://github.com/user-attachments/assets/18df1190-b505-46dd-ac60-2b1d39080c15" />
 *Figure 3: Setting and tracking multi-period financial goals.*
 
 ### 4. Interactive Financial Analytics
 Visualize your spending patterns through professional-grade charts. Analyze expenses by category over time to identify where your money goes.
 *   **Tech:** MPAndroidChart integration with custom styling and dynamic data filtering.
 
-![Financial Statistics](DIRECT_IMAGE_URL_HERE)
+<img width="1344" height="2992" alt="Screenshot_20260715_124714" src="https://github.com/user-attachments/assets/af814a53-e984-48db-928c-e98a4c266578" />
 *Figure 4: Detailed spending analytics and category distribution charts.*
 
 ### 5. Automated Recurring Incomes
 Automate your regular income streams. Whether it's a monthly salary or weekly freelance pay, the app schedules and reconciles these entries automatically.
 *   **Tech:** Custom background reconciliation logic that materializes future occurrences based on user-defined frequency rules.
 
-![Recurring Incomes](DIRECT_IMAGE_URL_HERE)
+<img width="1344" height="2992" alt="Screenshot_20260715_124644" src="https://github.com/user-attachments/assets/c62fc270-cee7-4ba9-989f-ae2d151e9fbb" />
 *Figure 5: Managing automated recurring income rules.*
 
-### 6. Transaction Management & Smart Categorization
-Detailed logging for every transaction with support for notes, custom categories, and status tracking (e.g., voiding or reconciliation).
-*   **Tech:** Robust SQLite database with foreign key constraints, indexing for performance, and ACID-compliant transactions.
-
-![Transaction Management](DIRECT_IMAGE_URL_HERE)
-*Figure 6: Comprehensive list and management of historical transactions.*
-
-### 7. Secure User Profiles & Authentication
+### 6. Secure User Profiles & Authentication
 Full user lifecycle management including secure registration, login with hashed credentials, and customizable profile settings.
 *   **Tech:** Session management, password hashing (BCrypt/PBKDF2 style), and local storage of user preferences.
 
-![User Profile](DIRECT_IMAGE_URL_HERE)
-*Figure 7: Secure user authentication and profile personalization.*
+<img width="1344" height="2992" alt="Screenshot_20260715_124725" src="https://github.com/user-attachments/assets/ca0c4252-cbe2-4239-ad73-0558d9116fae" />
+<img width="1344" height="2992" alt="Screenshot_20260715_124349" src="https://github.com/user-attachments/assets/c4ff1d35-b7fe-47a2-bb0f-77b229f68023" />
+<img width="1344" height="2992" alt="Screenshot_20260715_124354" src="https://github.com/user-attachments/assets/2b58ff8c-8f18-4661-8db6-124393e88390" />
+
+
+*Figure 6: Secure user authentication and profile personalization.*
 
 ## 🛠 Tech Stack & Libraries
 

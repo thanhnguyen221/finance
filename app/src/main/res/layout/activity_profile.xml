@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_green_soft">
+
+    <!-- AppBar / Toolbar (hạ xuống bằng paddingTop) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingTop="8dp"
+        android:background="@color/primary_green"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:title="@string/title_profile"
+        app:titleCentered="true"
+        app:contentInsetStartWithNavigation="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <!-- Nội dung căn giữa, max-width gọn gàng -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Avatar bo góc -->
+            <ImageView
+                android:id="@+id/ivAvatarBig"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_avatar_round"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_avatar_default"
+                android:contentDescription="@string/cd_avatar" />
+
+            <!-- Hai nút chọn ảnh (outlined) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickGallery"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_pick_gallery"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_green_dark"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_green"
+                    app:strokeWidth="1dp"
+                    app:backgroundTint="@android:color/transparent" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickFiles"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_pick_files"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_green_dark"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary_green"
+                    app:strokeWidth="1dp"
+                    app:backgroundTint="@android:color/transparent" />
+            </LinearLayout>
+
+            <!-- Form Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="2dp"
+                app:hintTextColor="@color/primary_green_dark">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/hint_email" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Form Phone -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="2dp"
+                app:hintTextColor="@color/primary_green_dark">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="@string/hint_phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Lưu (ONLY button có màu) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/btn_save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="14dp"
+                app:backgroundTint="@color/primary_green" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F8FA"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- CARD: Thiết lập ngân sách -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/tvBudgetInfo"
+                android:text="@string/budget_hint_title"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/label_select_range"
+                android:textColor="#7A7F8A"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Chọn kỳ: Ngày / Tuần / Tháng / Năm -->
+            <RadioGroup
+                android:id="@+id/rgRange"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbDay"
+                    android:text="@string/chip_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rbWeek"
+                    android:text="@string/chip_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rbMonth"
+                    android:text="@string/chip_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rbYear"
+                    android:text="@string/chip_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <!-- Mô tả khoảng đã chọn (pro look) -->
+            <TextView
+                android:id="@+id/tvRangeInfoBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#7A7F8A"
+                android:layout_marginTop="6dp"
+                android:text="" />
+
+            <!-- Số tiền ngân sách -->
+            <EditText
+                android:id="@+id/etPlannedAmount"
+                android:hint="@string/hint_planned_amount"
+                android:background="@drawable/bg_edittext"
+                android:padding="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <!-- Nút hành động -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnSaveBudget"
+                android:text="@string/btn_save"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/ripple_btn_primary"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/btnBackHome"
+                android:text="@string/btn_back_home"
+                android:textAllCaps="false"
+                android:textColor="#6A75D6"
+                android:background="@drawable/ripple_btn_outline"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

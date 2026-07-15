@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Xanh lá chủ đạo -->
+    <color name="primary_green">#22C55E</color>        <!-- emerald 500 -->
+    <color name="primary_green_dark">#16A34A</color>   <!-- emerald 600 -->
+    <color name="primary_green_light">#D1FAE5</color>  <!-- emerald 100 -->
+    <color name="bg_green_soft">#F6FEF9</color>        <!-- nền xanh rất nhạt -->
+
+    <!-- (Tùy chọn) màu chữ -->
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="income_green">#2E7D32</color>   <!-- xanh thu -->
+    <color name="expense_red">#C62828</color>    <!-- đỏ chi -->
+    <color name="chart_grid">#33000000</color>   <!-- grid xám nhạt -->
+
+</resources>

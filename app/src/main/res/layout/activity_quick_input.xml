@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFF8FAFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Card gọn: ô nhập nhanh -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_section_round"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_input_title"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#111827"/>
+
+            <EditText
+                android:id="@+id/etInput"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:hint="@string/quick_input_hint"
+                android:gravity="top|start"
+                android:padding="12dp"
+                android:background="#0D000000"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <RadioButton
+                    android:id="@+id/rbExpense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/opt_expense"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rbIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/opt_income"
+                    android:layout_marginStart="24dp"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnParse"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="96dp"
+                android:text="@string/quick_input_parse"/>
+        </LinearLayout>
+
+        <!-- Card gọn: kết quả parse + form chỉnh tay -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_section_round"
+            android:padding="14dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#388E3C"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Amount -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_amount"
+                android:textColor="#111827"/>
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:hint="@string/hint_amount"
+                android:inputType="number"
+                android:background="#0D000000"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_date"
+                android:textColor="#111827"/>
+            <EditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:hint="@string/hint_date"
+                android:background="#0D000000"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Merchant -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_merchant"
+                android:textColor="#111827"/>
+            <EditText
+                android:id="@+id/etMerchant"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:hint="@string/hint_merchant"
+                android:background="#0D000000"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Category -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_category"
+                android:textColor="#111827"/>
+            <AutoCompleteTextView
+                android:id="@+id/etCategory"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:hint="@string/hint_category_name"
+                android:background="#0D000000"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="@string/btn_save"
+                android:enabled="true"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+
+

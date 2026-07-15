@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Finance</string>
+
+    <!-- Common -->
+    <string name="btn_save">Lưu</string>
+    <string name="btn_add">Thêm</string>
+    <string name="btn_delete_txn">Xóa</string>
+    <string name="label_category">Danh mục</string>
+    <string name="hint_amount">Số tiền (đồng)</string>
+    <string name="hint_date">yyyy-MM-dd</string>
+    <string name="hint_note">Ghi chú</string>
+    <string name="msg_enter_valid_number">Nhập số hợp lệ</string>
+    <string name="msg_updated">Đã cập nhật</string>
+    <string name="msg_deleted">Đã xóa</string>
+    <string name="msg_saved">Đã lưu</string>
+    <string name="btn_back_home">Về trang chính</string>
+
+    <!-- Login/Register -->
+    <string name="hint_username">Tài khoản</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="btn_register">Đăng ký</string>
+    <string name="btn_create_account">Tạo tài khoản</string>
+    <string name="msg_login_success">Đăng nhập thành công</string>
+    <string name="msg_login_wrong">Thông tin đăng nhập không đúng vui lòng nhập lại!</string>
+    <string name="msg_register_fill">Nhập đầy đủ tài khoản/mật khẩu</string>
+    <string name="msg_register_exists">Tài khoản đã tồn tại</string>
+    <string name="msg_register_success">Đăng ký thành công</string>
+    <string name="msg_register_fail">Lỗi tạo tài khoản</string>
+
+    <!-- Dashboard -->
+    <string name="section_month_budget">Ngân sách </string>
+    <string name="label_month_planned">Dự tính</string>
+    <string name="label_month_spent">Đã dùng</string>
+    <string name="label_month_remain">Còn lại</string>
+    <string name="label_month_progress">Tiến độ</string>
+    <string name="section_today">Hôm nay</string>
+    <string name="label_today_income">Thu</string>
+    <string name="label_today_expense">Chi</string>
+    <string name="btn_open_budget">Ngân sách </string>
+    <string name="btn_open_expense_list">Danh sách chi</string>
+    <string name="btn_open_income_list">Danh sách thu</string>
+    <string name="btn_open_recurring">Thu nhập định kỳ</string>
+    <string name="btn_open_categories">Danh mục</string>
+    <string name="btn_open_stats">📊 Thống kê</string>
+    <string name="section_budget">Ngân sách</string>
+
+    <!-- Budget -->
+    <string name="budget_hint_title">Nhập ngân sách  (đồng)</string>
+    <string name="hint_planned_amount">10.000.000</string>
+    <string name="msg_budget_saved">Đã lưu ngân sách</string>
+    <string name="label_select_range">Chọn khoảng thời gian</string>
+    <string name="msg_budget_deleted">Đã xoá ngân sách cho khoảng đã chọn</string>
+
+    <!-- Transactions -->
+    <string name="btn_save_txn">Lưu</string>
+    <string name="msg_added_expense">Đã thêm chi</string>
+    <string name="msg_added_income">Đã thêm thu</string>
+    <string name="title_transactionxs">Chi tiêu</string> <!-- key cũ của bạn (sai chính tả), giữ lại để tránh lỗi -->
+    <string name="title_transactions">Chi tiêu</string>  <!-- key chuẩn cho layout mới -->
+    <string name="title_incomes">Thu nhập</string>
+    <string name="empty_transactions">Chưa có giao dịch</string>
+    <string name="desc_back">Quay lại</string>
+    <string name="label_filter">Lọc</string>
+
+    <!-- Stats -->
+    <string name="title_stats">Thống kê</string>
+    <string name="label_income_total">Tổng thu</string>
+    <string name="label_expense_total">Tổng chi</string>
+    <string name="label_balance">Cân đối</string>
+    <string name="chart_title_income_expense">Thu vs Chi</string>
+
+    <!-- Dashboard / chip -->
+    <string name="chip_day">📅 Ngày</string>
+    <string name="chip_week">🗓 Tuần</string>
+    <string name="chip_month">📆 Tháng</string>
+    <string name="chip_year">📈 Năm</string>
+
+    <!-- Recurring income -->
+    <string name="title_recurring_income">Thu nhập định kỳ</string>
+    <string name="hint_income_amount">Số tiền (đồng)</string>
+    <string name="hint_day_of_month">Ngày nhận (1..31)</string>
+    <string name="hint_start_date">Ngày bắt đầu yyyy-MM-dd</string>
+    <string name="btn_add_recurring">Thêm định kỳ</string>
+    <string name="msg_added_recurring">Đã thêm thu nhập định kỳ</string>
+    <string name="label_recurring_list">Thu nhập định kỳ</string>
+    <string name="btn_expand_list">▼ Hiện danh sách</string>
+    <string name="btn_collapse_list">▲ Thu gọn</string>
+    <string name="msg_invalid_date">Ngày không hợp lệ (yyyy-MM-dd)</string>
+
+    <!-- Categories -->
+    <string name="title_categories">Danh mục</string>
+    <string name="hint_category_name">Tên danh mục</string>
+    <string name="btn_add_category">Thêm danh mục</string>
+    <string name="opt_income">Thu</string>
+    <string name="opt_expense">Chi</string>
+    <string name="title_edit_category">Sửa danh mục</string>
+    <string name="msg_category_conflict">Danh mục trùng (Tên + Loại) đã tồn tại.</string>
+    <string name="msg_delete_category_warning">Xoá danh mục sẽ xoá các giao dịch liên quan. Tiếp tục?</string>
+
+    <!-- Recurring income layout mới: bổ sung nhãn/mô tả -->
+    <string name="hint_recurring_income">Thiết lập khoản thu tự động theo tháng; sẽ tự cộng vào thu nhập đúng ngày.</string>
+    <string name="label_amount">Số tiền</string>
+    <string name="label_day_in_month">Ngày trong tháng</string>
+    <string name="label_start_date">Ngày bắt đầu</string>
+    <string name="desc_decrease">Giảm</string>
+    <string name="desc_increase">Tăng</string>
+    <string name="desc_pick_date">Chọn ngày</string>
+
+    <!-- Filter menu (nếu dùng) -->
+    <string name="menu_today">Hôm nay</string>
+    <string name="menu_this_week">Tuần này</string>
+    <string name="menu_this_month">Tháng này</string>
+    <string name="menu_this_year">Năm nay</string>
+    <string name="menu_pick_day">Chọn ngày…</string>
+    <string name="menu_pick_range">Chọn khoảng…</string>
+    <string name="menu_pick_range_start">Chọn ngày bắt đầu</string>
+    <string name="menu_pick_range_end">Chọn ngày kết thúc</string>
+
+    <string name="btn_cancel">Huỷ</string>
+
+    <string name="chart_title_budget_breakdown">Phân bổ ngân sách</string>
+    <string name="chart_empty">Chưa có dữ liệu để vẽ biểu đồ</string>
+
+    <!-- Greeting -->
+    <string name="greeting_hello">Xin chào, %1$s</string>
+
+    <!-- Range info -->
+    <string name="range_day">Hôm nay: %1$s</string>
+    <string name="range_week">Tuần: %1$s – %2$s (%3$d ngày)</string>
+    <string name="range_month">Tháng %1$d/%2$d: %3$d ngày (%4$s – %5$s)</string>
+    <string name="range_year">Năm %1$d • %2$s • %3$d ngày (%4$s – %5$s)</string>
+    <string name="vn_zodiac">Năm %1$s</string>
+
+    <!-- Pie labels (overspend mode) -->
+    <string name="label_spent_in_limit">Trong hạn mức</string>
+    <string name="label_over_budget">Vượt ngân sách</string>
+    <string name="center_over_budget">Vượt %1$s</string>
+
+    <!-- Notifications -->
+    <string name="channel_budget_name">Cảnh báo ngân sách</string>
+    <string name="channel_budget_desc">Thông báo khi chi tiêu vượt hạn mức</string>
+    <string name="notif_over_title">Cảnh báo vượt ngân sách</string>
+    <string name="notif_over_body">Đã dùng %1$s / hạn mức %2$s (vượt %3$s).</string>
+    <string name="notif_over_range_suffix">Khoảng: %1$s</string>
+
+
+    <string name="hint_categories_sub">Thêm danh mục mới và quản lý danh mục hiện có.</string>
+    <string name="label_category_type">Loại</string>
+    <string name="label_category_name">Tên danh mục</string>
+    <string name="empty_categories">Chưa có danh mục</string>
+
+
+    <string name="btn_open_chat">Trợ lý</string>
+    <string name="title_chatbot">Trợ lý chi tiêu</string>
+    <string name="hint_chat_input">Nhập tin nhắn…</string>
+    <string name="btn_send">Gửi</string>
+    <string name="label_you">Bạn</string>
+    <string name="label_bot">Trợ lý</string>
+    <string name="status_typing">đang phản hồi…</string>
+
+    <string name="chat_title">Trợ lý tài chính</string>
+    <string name="chat_hint">Nhập câu hỏi, mình sẽ phản hồi ngay (OpenRouter + Firebase).</string>
+    <string name="chat_input_hint">Bạn cần gì…</string>
+    <string name="chat_btn_send">Gửi</string>
+    <string name="chat_btn_close">Đóng</string>
+
+
+
+
+    <!-- đã có từ trước, nhắc lại để đủ -->
+    <string name="title_profile">Hồ sơ</string>
+    <string name="btn_pick_gallery">Từ Thư viện</string>
+    <string name="btn_pick_files">Từ Tệp (PC)</string>
+    <string name="pick_image_title">Chọn ảnh</string>
+    <string name="cd_avatar">Ảnh đại diện</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Số điện thoại</string>
+    <string name="btn_save2">Lưu</string>
+    <string name="err_email_invalid">Email không hợp lệ</string>
+    <string name="err_phone_invalid">Số điện thoại không hợp lệ</string>
+    <string name="err_email_taken">Email đã được sử dụng</string>
+    <string name="err_phone_taken">Số điện thoại đã được sử dụng</string>
+
+    <string name="hint_confirm_password">Nhập lại mật khẩu</string>
+
+
+
+
+    <!-- Stats mở rộng -->
+    <string name="custom">Tùy chọn</string>
+    <string name="pick_start">Từ ngày</string>
+    <string name="pick_end">Đến ngày</string>
+    <string name="use_income_as_baseline_if_greater">Dùng THU làm mốc nếu lớn hơn NGÂN SÁCH</string>
+    <string name="label_planned">Ngân sách (kỳ)</string>
+    <string name="label_baseline">Mốc so sánh</string>
+    <string name="label_remaining_vs_planned">Còn lại so với NGÂN SÁCH</string>
+    <string name="label_remaining_vs_income">Còn lại so với THU</string>
+    <string name="label_usage_vs_planned">% dùng so với NGÂN SÁCH</string>
+    <string name="label_usage_vs_income">% dùng so với THU</string>
+
+    <!-- Danh sách hoạt động theo khoảng -->
+    <string name="range_detail_title">Tất cả hoạt động thu/chi trong khoảng</string>
+    <string name="range_detail_empty">Không có hoạt động nào trong khoảng đã chọn</string>
+    <string name="no_note">(không ghi chú)</string>
+
+
+    <!-- Nhãn trục X cho biểu đồ -->
+    <string name="chart_label_income">Thu</string>
+    <string name="chart_label_expense">Chi</string>
+
+
+    <string name="today_activity_title">Hoạt động hôm nay</string>
+    <string name="today_activity_empty">Chưa có giao dịch trong ngày</string>
+
+    <string name="section_today_with_date">Hôm nay • %1$s</string>
+    <string name="empty_today">Chưa có giao dịch trong ngày</string>
+
+
+    <!-- Quick Input -->
+    <string name="quick_input_title">Nhập nhanh</string>
+    <string name="quick_input_hint">ví dụ: "ăn sáng 30k @quán phở hôm nay"</string>
+    <string name="quick_input_parse">Phân tích</string>
+    <string name="quick_input_parsed">Đã phân tích từ câu nhập.</string>
+    <string name="quick_input_empty">Vui lòng nhập câu mô tả</string>
+    <string name="need_amount_date">Cần nhập SỐ TIỀN và NGÀY</string>
+    <string name="quick_input_saved_with_id">Đã lưu giao dịch #%1$d</string>
+
+    <!-- Generic labels used in forms -->
+    <string name="label_date">Ngày</string>
+    <string name="label_merchant">Cửa hàng/Nơi chi</string>
+    <string name="hint_merchant">Tên cửa hàng hoặc nơi chi</string>
+
+    <!-- OCR / Camera -->
+    <string name="ocr_capture">Chụp hóa đơn</string>
+    <string name="ocr_retake">Chụp lại</string>
+    <string name="ocr_result_title">Kết quả OCR</string>
+    <string name="ocr_image_saved_to">Ảnh lưu vào:</string>
+    <string name="ocr_need_camera">Cần quyền CAMERA để quét hoá đơn</string>
+    <string name="ocr_camera_init_failed">Không khởi tạo được camera</string>
+    <string name="ocr_capture_error">Lỗi chụp ảnh: %1$s</string>
+    <string name="ocr_image_read_failed">Không đọc được ảnh</string>
+    <string name="ocr_failed">OCR lỗi: %1$s</string>
+    <string name="ocr_no_image">Chưa có ảnh hoá đơn</string>
+    <string name="ocr_save_both">Lưu hóa đơn + giao dịch</string>
+    <string name="ocr_saved_both_with_id">Đã lưu hoá đơn #%1$d và giao dịch #%2$d</string>
+
+
+</resources>

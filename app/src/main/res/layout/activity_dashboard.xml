@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF7F8FA"
+        android:animateLayoutChanges="true"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <!-- Add bottom padding to avoid overlay -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="160dp">
+
+            <!-- CARD: Greeting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_avatar_round"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user_avatar_default"
+                    android:contentDescription="@string/cd_avatar"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_today"
+                        android:textSize="13sp"
+                        android:textColor="#7A7F8A"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CARD: Budget + Range -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/section_budget"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgBudgetRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <RadioButton
+                        android:id="@+id/rbDay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/chip_day"
+                        android:gravity="center"/>
+
+                    <RadioButton
+                        android:id="@+id/rbWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/chip_week"
+                        android:gravity="center" />
+
+                    <RadioButton
+                        android:id="@+id/rbMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/chip_month"
+                        android:checked="true"
+                        android:gravity="center" />
+
+                    <RadioButton
+                        android:id="@+id/rbYear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/chip_year"
+                        android:gravity="center" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/tvRangeInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="#7A7F8A"
+                    android:layout_marginTop="6dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_month_planned"/>
+                    <TextView
+                        android:id="@+id/tvMonthPlanned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_month_spent"/>
+                    <TextView
+                        android:id="@+id/tvMonthSpent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_month_remain"/>
+                    <TextView
+                        android:id="@+id/tvMonthRemain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_month_progress"/>
+                    <TextView
+                        android:id="@+id/tvMonthProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="0%"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbMonthProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="6dp"
+                    android:max="100"/>
+            </LinearLayout>
+
+            <!-- CARD: Pie Chart -->
+            <LinearLayout
+                android:id="@+id/cardPie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/tvChartTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chart_title_budget_breakdown"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tvChartSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#7A7F8A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"/>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvChartEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/chart_empty"
+                    android:textColor="#7A7F8A"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- MINI-CARDS: Today Income / Expense -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginEnd="6dp"
+                    android:elevation="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_today_income"
+                        android:textSize="13sp"
+                        android:textColor="#7A7F8A"/>
+                    <TextView
+                        android:id="@+id/tvTodayIncome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginStart="6dp"
+                    android:elevation="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_today_expense"
+                        android:textSize="13sp"
+                        android:textColor="#7A7F8A"/>
+                    <TextView
+                        android:id="@+id/tvTodayExpense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:text="0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CARD: Today Activities -->
+            <LinearLayout
+                android:id="@+id/cardToday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/tvTodayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="@string/section_today" />
+
+                <LinearLayout
+                    android:id="@+id/todayListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvTodayEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_today"
+                    android:textColor="#7A7F8A"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- DOCK (overlay) -->
+    <LinearLayout
+        android:id="@+id/actionDock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="@android:color/transparent">
+
+        <HorizontalScrollView
+            android:id="@+id/dockScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:id="@+id/dockContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@android:color/transparent">
+
+                <!-- Budget -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnBudget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_budget"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_budget" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_budget"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+
+                <!-- Stats -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnStats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_stats"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_stats" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_stats"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+
+                <!-- Expenses -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnExpenses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_expense"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_expense_list" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_expense_list"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+
+                <!-- Incomes -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnIncomes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_income"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_income_list" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_income_list"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+
+                <!-- Recurring -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnRecurring"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_recurring"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_recurring" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_recurring"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+
+                <!-- Categories -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabSize="mini"
+                        app:fabCustomSize="40dp"
+                        app:maxImageSize="20dp"
+                        app:ensureMinTouchTargetSize="false"
+                        app:srcCompat="@drawable/ic_category"
+                        app:tint="@android:color/white"
+                        app:backgroundTint="?attr/colorPrimary"
+                        android:contentDescription="@string/btn_open_categories" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_open_categories"
+                        android:textColor="#334155"
+                        android:textSize="10sp"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F8FA">
+
+    <!-- Nội dung cuộn -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:animateLayoutChanges="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/title_stats"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Chọn kỳ: ChipGroup tự wrap nhiều dòng -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cgRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:singleSelection="true"
+                app:singleLine="false"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDay"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_day"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWeek"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_week"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMonth"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_month"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipYear"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_year"
+                    app:checkedIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCustom"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/custom"
+                    app:checkedIconVisible="false" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Chọn khoảng ngày (Tùy chọn) -->
+            <LinearLayout
+                android:id="@+id/boxCustom"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:text="@string/pick_start"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnEnd"
+                    android:text="@string/pick_end"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Chính sách baseline -->
+            <CheckBox
+                android:id="@+id/cbUseIncomeBaseline"
+                android:checked="true"
+                android:text="@string/use_income_as_baseline_if_greater"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Thông tin kỳ -->
+            <TextView
+                android:id="@+id/tvRangeInfo"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Tổng hợp: Thu/Chi/Cân đối -->
+            <LinearLayout
+                android:background="@drawable/bg_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_income_total" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvIncomeTotal" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_expense_total" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvExpenseTotal" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_balance" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvBalance" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- KPI mở rộng -->
+            <LinearLayout
+                android:background="@drawable/bg_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_planned" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvPlanned" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_baseline" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvBaseline" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_remaining_vs_planned" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvRemainPlanned" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_remaining_vs_income" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvRemainIncome" android:textStyle="bold" android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_usage_vs_planned" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvUsagePlanned" android:textSize="15sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%"/>
+                </LinearLayout>
+
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="@string/label_usage_vs_income" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvUsageIncome" android:textSize="15sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Biểu đồ Thu/Chi -->
+            <LinearLayout
+                android:background="@drawable/bg_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="12dp">
+                <TextView
+                    android:text="@string/chart_title_income_expense"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- Danh sách hoạt động trong khoảng đã chọn -->
+            <LinearLayout
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/range_detail_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvRangeEmpty"
+                    android:text="@string/range_detail_empty"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB nổi góc phải dưới -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBackHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_home"
+        app:tint="@android:color/white"
+        app:backgroundTint="?attr/colorPrimary"
+        android:contentDescription="@string/btn_back_home" />
+
+</FrameLayout>

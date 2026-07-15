@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_card_round"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Danh mục -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@android:drawable/ic_menu_agenda"
+            app:tint="#6A75D6"
+            android:contentDescription="@string/label_category"/>
+
+        <Spinner
+            android:id="@+id/spEditCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+
+    <!-- Số tiền -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@android:drawable/ic_menu_edit"
+            app:tint="#6A75D6"
+            android:contentDescription="@string/label_amount"/>
+
+        <EditText
+            android:id="@+id/etEditAmount"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_edittext"
+            android:padding="14dp"
+            android:inputType="number"
+            android:hint="@string/hint_income_amount"/>
+    </LinearLayout>
+
+    <!-- Ngày bắt đầu (click để chọn) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar"
+            app:tint="#6A75D6"
+            android:contentDescription="@string/label_start_date"/>
+
+        <EditText
+            android:id="@+id/etEditStart"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_edittext"
+            android:padding="14dp"
+            android:focusable="false"
+            android:clickable="true"
+            android:hint="@string/hint_start_date"/>
+    </LinearLayout>
+
+    <!-- Hàng nút -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnDialogSave"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="@string/btn_save"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/ripple_btn_primary"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnDialogDelete"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="@string/btn_delete_txn"
+            android:textAllCaps="false"
+            android:textColor="#6A75D6"
+            android:background="@drawable/ripple_btn_outline"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnDialogCancel"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="@string/btn_cancel"
+            android:textAllCaps="false"
+            android:textColor="#6A75D6"
+            android:background="@drawable/ripple_btn_outline"/>
+    </LinearLayout>
+</LinearLayout>

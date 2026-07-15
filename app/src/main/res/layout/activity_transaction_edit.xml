@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F8FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- CARD: Thông tin giao dịch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_round"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp">
+
+            <!-- Nhãn danh mục -->
+            <TextView
+                android:text="@string/label_category"
+                android:textSize="13sp"
+                android:textColor="#7A7F8A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+                android:id="@+id/spCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Số tiền -->
+            <EditText
+                android:id="@+id/etAmount"
+                android:hint="@string/hint_amount"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Ngày -->
+            <EditText
+                android:id="@+id/etDate"
+                android:hint="@string/hint_date"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Ghi chú -->
+            <EditText
+                android:id="@+id/etNote"
+                android:hint="@string/hint_note"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@android:drawable/edit_text"/>
+        </LinearLayout>
+
+        <!-- CARD: Hàng nút hành động -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_round"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSaveTxn"
+                    android:text="@string/btn_save_txn"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/ripple_chip_action"
+                    android:minHeight="0dp"
+                    android:layout_height="44dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="1dp" />
+
+                <Button
+                    android:id="@+id/btnDeleteTxn"
+                    android:text="@string/btn_delete_txn"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/ripple_chip_action"
+                    android:minHeight="0dp"
+                    android:layout_height="44dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBackHome"
+                android:text="@string/btn_back_home"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/ripple_chip_action"
+                android:minHeight="0dp"
+                android:layout_height="44dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

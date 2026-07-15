@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===== Quyền (ngoài <application>) ===== -->
+    <!-- Android 13+ cần xin quyền thông báo -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Quyền Camera cho chức năng OCR -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- ===== Khai báo phần cứng liên quan đến camera (để tránh cảnh báo Lint) ===== -->
+    <!-- Đặt required=false để app vẫn cài được trên thiết bị không có camera -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <!-- Nếu bạn KHÔNG dùng flash thì có thể xoá dòng dưới -->
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Finance">
+
+        <!-- Launcher: LoginActivity -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Đăng ký -->
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="false" />
+
+        <!-- Dashboard -->
+        <activity
+            android:name=".ui.DashboardActivity"
+            android:exported="false" />
+
+        <!-- Ngân sách -->
+        <activity
+            android:name=".ui.BudgetActivity"
+            android:exported="false" />
+
+        <!-- Danh sách & Sửa chi -->
+        <activity
+            android:name=".ui.ExpenseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ExpenseEditActivity"
+            android:exported="false" />
+
+        <!-- Danh sách & Sửa thu -->
+        <activity
+            android:name=".ui.IncomeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.IncomeEditActivity"
+            android:exported="false" />
+
+        <!-- Thu nhập định kỳ -->
+        <activity
+            android:name=".ui.RecurringIncomeActivity"
+            android:exported="false" />
+
+        <!-- Danh mục -->
+        <activity
+            android:name=".ui.CategoryActivity"
+            android:exported="false" />
+
+        <!-- Thống kê -->
+        <activity
+            android:name=".ui.StatsActivity"
+            android:exported="false" />
+
+        <!-- Hồ sơ -->
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.DashboardActivity">
+            <!-- Hỗ trợ nút Up cho API cũ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.DashboardActivity" />
+        </activity>
+
+        <!-- Màn Nhập nhanh -->
+        <activity
+            android:name=".ui.QuickInputActivity"
+            android:exported="false" />
+
+        <!-- Màn Quét hoá đơn (OCR) -->
+        <activity
+            android:name=".ui.ReceiptOcrActivity"
+            android:exported="false" />
+
+        <!-- (Tùy chọn) loại bỏ MainActivity nếu có trong merge -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            tools:node="remove" />
+    </application>
+</manifest>
